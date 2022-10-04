@@ -29,9 +29,12 @@ public class SistemaEscolaApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		Nota n1 = new Nota(null,10, 10);
-		Aluno a1 = new Aluno(null, "Pedro", 0,n1);
+		Nota n2 = new Nota(null,10, 10);
 
-		alunoRepository.saveAll(Arrays.asList(a1));
-		notaRepository.save(n1);
+		Aluno a1 = new Aluno(null, "Pedro", 0,n1);
+		Aluno a2 = new Aluno(null, "Joâo", 0,n1);
+		
+		alunoRepository.saveAll(Arrays.asList(a1,a2));
+		notaRepository.saveAll(Arrays.asList(n1,n2));
 	}
 }
